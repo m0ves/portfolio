@@ -1,0 +1,100 @@
+body {
+   margin: 5px;
+   margin-top: 0px;
+   min-width: 1300px;
+   padding: 0px;
+   font-family: Arial, Helvetica, sans-serif;
+   background: #e6e6e6;
+   color: white;
+}
+header {
+   width: 100%;
+   background:#d21212 url(../other/canvas1.png) no-repeat 5% 50%;
+   height: 80px;
+   border-radius: 5px;
+}
+.title {
+   font-size: 40px;
+   font-weight: bold;
+   padding-top: 10px;
+   text-align: center;
+}
+a {
+   text-decoration: none;
+   color: white;
+   background-color: #e05e5e;
+   border-radius: 10%;
+   padding: 10px;
+}
+.dropbtn {
+   background: url(../other/menu.png);
+   padding: 30px;
+   top: 3px;
+   right: 100px;
+   border: none;
+}
+.dropmenu {
+   position: relative;
+   display: inline-block;
+   top: -45px;
+   left: 95%;
+}
+.drop-content {
+   border-radius: 10%;
+   display: none;
+   position: absolute;
+   background-color: #e05e5e;
+   min-width: 160px;
+   z-index: 1;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.drop-content a{
+   color: white;
+   border-radius: 10%;
+   display: block;
+   padding: 12px 16px;
+   border: none;
+}
+.show {
+   right: 0;
+   display: block;
+   position: absolute;
+   background-color: #e05e5e;
+   min-width: 150px;
+   z-index: 1;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+a:hover {
+   color: #e05e5e;
+   font-weight: bold;
+   box-shadow: 1px 1px 2px #1CEBB8;
+   background-color: white;
+   border: 2px solid #e05e5e;
+}
+.text-block h2{
+   text-align: center;
+   color: #838383;
+}
+.text-block {
+   color: #838383;
+   margin: 10px auto;
+   padding: 10px;
+   border-radius: 5px;
+   background: white;
+}
+.small-block {
+   width: 45%;
+   color: #838383;
+   margin: 10px auto;
+   padding: 10px;
+   border-radius: 5px;
+   background: white;
+}
+.inline-blocks {
+   display: flex;
+}
+hr {
+   border: none;
+   height: 5px;
+   background: linear-gradient(to right, #e6e6e6 5%, #e05e5e 50%, #e6e6e6 95%);
+}
