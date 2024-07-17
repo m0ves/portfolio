@@ -1,0 +1,255 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #eaeaea;
+    transform: translateY(-3px);
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 60px 0;
+    background-image: url("images/flat-lay-fish-vegetables.jpg");
+    background-size: cover;
+    background-position: center;
+    transition: background-position 0.5s ease;
+}
+
+.hero:hover {
+    background-position: center 10%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* зеленый фон */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+/* Features Section Styles */
+.features {
+    background-image: url("images/background.jpg"); /* светлый фон */
+    padding: 80px 0;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+}
+
+.feature {
+    background-color: #28a745;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-description {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.feature-description h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff; /* белый цвет текста */
+}
+
+.feature-description p {
+    font-size: 1.1em;
+    color: #fff; /* белый цвет текста */
+}
+
+.feature-image {
+    flex: 1;
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover .feature-image img {
+    transform: scale(1.05);
+}
+
+/* Screenshots Section Styles */
+.screenshots {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.screenshot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.screenshot {
+    flex: 0 0 30%;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.screenshot img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+}
+
+.screenshot p {
+    margin-top: 10px;
+}
+
+/* FAQ Section Styles */
+.faq {
+    background-color: #f8f9fa; /* светлый фон */
+    padding: 80px 0;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-item h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.faq-item p {
+    font-size: 1.1em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+}
