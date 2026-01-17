@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анна Каренина | Свадебный фотограф</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Иконки Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Swiper для галереи/слайдера -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Наш основной файл стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Анна Каренина</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Прайс</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Обо мне</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-book" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            Написать мне
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-1">Ловлю моменты, которые остаются навсегда</h1>
+                <p class="lead">Свадебный фотограф из Челябинска. Создаю искренние и атмосферные кадры.</p>
+                <a href="#gallery" class="btn btn-accent">Смотреть работы</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Галерея / Слайдер -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Мои работы</h2>
+            
+            <!-- Swiper слайдер -->
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=1200&auto=format&fit=crop&q=80" 
+                                 alt="Свадебная церемония" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Свадебная церемония</h5>
+                                <p>Обмен кольцами в храме</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 2 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=1200&auto=format&fit=crop&q=80" 
+                                 alt="Первый танец" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Первый танец</h5>
+                                <p>Романтичный момент молодоженов</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 3 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1669301519289-b932696dfce7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUQwJUIyJUQwJUI1JUQxJTg3JUQwJUI1JUQxJTgwJTIwJUQwJUI0JUQwJUI1JUQwJUIyJUQxJTgzJUQxJTg4JUQwJUJBJUQwJUIwfGVufDB8fDB8fHww" 
+                                 alt="Вечерние портреты" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Вечерние портреты</h5>
+                                <p>Золотой час на закате</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 4 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&auto=format&fit=crop&q=80" 
+                                 alt="Первый взгляд невесты" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Первый взгляд невесты</h5>
+                                <p>Трогательный момент перед церемонией</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 5 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1654204706762-ca8482f4870d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG92ZSUyMHN0b3J5fGVufDB8fDB8fHww" 
+                                 alt="Love Story" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Love Story</h5>
+                                <p>Прогулка в парке</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 6 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&auto=format&fit=crop&q=80" 
+                                 alt="Портретная съемка" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Портретная съемка</h5>
+                                <p>Естественный свет в студии</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 7 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&auto=format&fit=crop&q=80" 
+                                 alt="Церковная церемония" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Церковная церемония</h5>
+                                <p>Торжественное венчание</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 8 -->
+                    <div class="swiper-slide">
+                        <div class="gallery-card">
+                            <img src="https://plus.unsplash.com/premium_photo-1670430932511-ce1929259fed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bG92ZSUyMHN0b3J5fGVufDB8fDB8fHww" 
+                                 alt="Детали свадьбы" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h5>Детали свадьбы</h5>
+                                <p>Элегантные туфли невесты</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Навигация слайдера -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <!-- Статичная мини-галерея под слайдером -->
+            <div class="row mt-5 mini-gallery">
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w-600&auto=format&fit=crop&q=60" 
+                         alt="Свадьба 1" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#imageModal1">
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&auto=format&fit=crop&q=60" 
+                         alt="Свадьба 2" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#imageModal2">
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1744371272992-76e46d7a4f3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fCVEMSU4MSVEMCVCMiVEMCVCMCVEMCVCNCVEMSU4QyVEMCVCMSVEMCVCMHxlbnwwfHwwfHx8MA%3D%3D" 
+                         alt="Свадьба 3" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#imageModal3">
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&auto=format&fit=crop&q=60" 
+                         alt="Свадьба 4" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#imageModal4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Обо мне" -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1672675457236-fc43160c0c74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcwfHxwaG90b2dyYXBoZXJ8ZW58MHx8MHx8fDA%3D" 
+                             alt="Анна Каренина, фотограф" class="img-fluid about-img">
+                        <div class="experience-badge">
+                            <span>7 лет</span>
+                            <small>опыта</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2 class="section-title">Привет, я Анна</h2>
+                    <p class="lead">Свадебный фотограф из Челябинска с 7-летним опытом.</p>
+                    <p>Моя философия проста: ловить настоящие эмоции, а не ставить в позы. Я создаю атмосферу, в которой вы можете быть собой, а моя камера — лишь незаметный наблюдатель.</p>
+                    <p>За годы работы сняла более 150 свадеб по всему Уралу. Для меня каждая пара — уникальная история, которую хочется рассказать через фотографии.</p>
+                    <div class="stats mt-4">
+                        <div class="stat-item">
+                            <span class="number">150+</span>
+                            <span class="label">свадеб</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">12</span>
+                            <span class="label">городов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">4.9</span>
+                            <span class="label">рейтинг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Прайс" -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Пакеты съемки</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Пакет 1 -->
+                <div class="col">
+                    <div class="card pricing-card h-100 text-center">
+                        <div class="card-header py-4">
+                            <h3 class="h4">Стандарт</h3>
+                            <div class="price"><span class="fs-1">45 000₽</span></div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> 5 часов съемки</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> 150+ обработанных фото</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Love-story до свадьбы</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Цифровой альбом</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Срок: 4 недели</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 bg-white pb-4">
+                            <button class="btn btn-accent w-100" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Пакет 2 -->
+                <div class="col">
+                    <div class="card pricing-card h-100 text-center border-accent popular">
+                        <div class="card-badge">Популярный</div>
+                        <div class="card-header py-4">
+                            <h3 class="h4">Премиум</h3>
+                            <div class="price"><span class="fs-1">65 000₽</span></div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Весь день (8+ часов)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> 300+ обработанных фото</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Помощник фотографа</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Печатный фотоальбом</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Срочная обработка</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Все фото на флешке</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 bg-white pb-4">
+                            <button class="btn btn-accent w-100" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Пакет 3 -->
+                <div class="col">
+                    <div class="card pricing-card h-100 text-center">
+                        <div class="card-header py-4">
+                            <h3 class="h4">Экспресс</h3>
+                            <div class="price"><span class="fs-1">25 000₽</span></div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> 2 часа съемки</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> 50+ обработанных фото</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Для росписи или мини-свадьбы</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-accent"></i> Срок: 2 недели</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 bg-white pb-4">
+                            <button class="btn btn-accent w-100" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                Забронировать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Отзывы" -->
+    <section id="reviews" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Отзывы клиентов</h2>
+            <div class="row">
+                <!-- Отзыв 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="review-card p-4 h-100">
+                        <div class="review-author mb-3">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Мария" class="review-avatar">
+                            <div>
+                                <strong>Мария и Иван</strong>
+                                <div class="text-accent">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Фото получились невероятными! Анна уловила все самые важные моменты нашей свадьбы."</p>
+                        <div class="review-date mt-2">
+                            <small class="text-muted">Сентябрь 2023</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Отзыв 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="review-card p-4 h-100">
+                        <div class="review-author mb-3">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Ольга" class="review-avatar">
+                            <div>
+                                <strong>Ольга и Алексей</strong>
+                                <div class="text-accent">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Спасибо за профессионализм! Расслабленная атмосфера и потрясающий результат."</p>
+                        <div class="review-date mt-2">
+                            <small class="text-muted">Август 2023</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Отзыв 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="review-card p-4 h-100">
+                        <div class="review-author mb-3">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="Екатерина" class="review-avatar">
+                            <div>
+                                <strong>Екатерина и Дмитрий</strong>
+                                <div class="text-accent">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Даже дождь не помешал сделать атмосферные кадры! Анна — настоящий профессионал."</p>
+                        <div class="review-date mt-2">
+                            <small class="text-muted">Июль 2023</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Отзыв 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="review-card p-4 h-100">
+                        <div class="review-author mb-3">
+                            <img src="https://i.pravatar.cc/150?img=45" alt="Анна" class="review-avatar">
+                            <div>
+                                <strong>Анна и Сергей</strong>
+                                <div class="text-accent">★ ★ ★ ★ ★</div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Каждая фотография — это история. Рекомендуем всем, кто хочет настоящие эмоции на фото!"</p>
+                        <div class="review-date mt-2">
+                            <small class="text-muted">Июнь 2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="contact" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="mb-3">Анна Каренина</h3>
+                    <p>Свадебный фотограф в Челябинске и по всему Уралу. Ловлю искренние моменты с 2017 года.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-vk"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt text-accent me-2"></i> Челябинск, выезд по УРФО</li>
+                        <li class="mb-2"><i class="bi bi-telephone text-accent me-2"></i> <a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li class="mb-2"><i class="bi bi-envelope text-accent me-2"></i> <a href="mailto:hello@anna-karenina.ru">hello@anna-karenina.ru</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3">Быстрые ссылки</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#gallery"><i class="bi bi-arrow-right-short text-accent"></i> Галерея</a></li>
+                        <li class="mb-2"><a href="#pricing"><i class="bi bi-arrow-right-short text-accent"></i> Прайс</a></li>
+                        <li class="mb-2"><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="bi bi-arrow-right-short text-accent"></i> Написать мне</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center small mb-0">&copy; <span id="currentYear">2024</span> Анна Каренина. Свадебный фотограф.</p>
+        </div>
+    </footer>
+
+    <!-- Круглая кнопка чата -->
+    <div class="chat-circle" data-bs-toggle="modal" data-bs-target="#contactModal">
+        <i class="bi bi-chat-dots"></i>
+    </div>
+
+    <!-- ========== МОДАЛЬНЫЕ ОКНА ========== -->
+
+    <!-- Модальное окно для контактов -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-envelope me-2"></i>Напишите мне</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Сообщение</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Опишите ваши пожелания..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Интересуемый пакет</label>
+                            <select class="form-select">
+                                <option value="">Выберите пакет</option>
+                                <option value="standard">Стандарт (45 000₽)</option>
+                                <option value="premium">Премиум (65 000₽)</option>
+                                <option value="express">Экспресс (25 000₽)</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Отвечу в течение дня! Также можно написать в WhatsApp или позвонить.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-accent" onclick="sendMessage()">
+                        <i class="bi bi-send me-2"></i>Отправить
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальные окна для увеличенных фото (мини-галерея) -->
+    <div class="modal fade" id="imageModal1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w-1200&auto=format&fit=crop&q=80" 
+                         alt="Свадьба 1" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="imageModal2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=1200&auto=format&fit=crop&q=80" 
+                         alt="Свадьба 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="imageModal3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=1200&auto=format&fit=crop&q=80" 
+                         alt="Свадьба 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="imageModal4" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&auto=format&fit=crop&q=80" 
+                         alt="Свадьба 4" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб единоборств «Стальной Лис»</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1 class="logo-text">СТАЛЬНОЙ <span>ЛИС</span></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">О клубе</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trainers">Тренеры</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Отзывы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный баннер -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">СТАЛЬНАЯ ВОЛЯ. ЛИСЬЯ СМЕКАЛКА.</h2>
+                    <p class="hero-subtitle">Профессиональные тренировки по ММА, боксу и борьбе для всех уровней подготовки</p>
+                    <a href="#contact" class="btn btn-accent btn-lg">ЗАПИСАТЬСЯ НА ПРОБНУЮ ТРЕНИРОВКУ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О клубе -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">О КЛУБЕ <span>«СТАЛЬНОЙ ЛИС»</span></h2>
+                    <p class="about-text">Основанный в 2010 году, наш клуб стал домом для сотен бойцов, стремящихся к совершенству в смешанных единоборствах.</p>
+                    <p class="about-text">Мы предлагаем профессиональные тренировки для всех уровней подготовки: от новичков, делающих первые шаги в ММА, до опытных бойцов, готовящихся к турнирам.</p>
+                    
+                    <!-- Исправленные блоки с иконками inline -->
+                    <div class="features">
+                        <div class="feature-item d-flex align-items-start">
+                            <i class="fas fa-dumbbell feature-icon me-3"></i>
+                            <div>
+                                <h4>Современное оборудование</h4>
+                                <p class="feature-text">Зал площадью 300 м² с профессиональным оборудованием</p>
+                            </div>
+                        </div>
+                        <div class="feature-item d-flex align-items-start">
+                            <i class="fas fa-trophy feature-icon me-3"></i>
+                            <div>
+                                <h4>Опытные тренеры</h4>
+                                <p class="feature-text">Тренеры с боевым опытом и педагогическим стажем</p>
+                            </div>
+                        </div>
+                        <div class="feature-item d-flex align-items-start">
+                            <i class="fas fa-users feature-icon me-3"></i>
+                            <div>
+                                <h4>Разные группы</h4>
+                                <p class="feature-text">Детские, женские, взрослые группы и индивидуальные тренировки</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <!-- Заменил неработающую фотку -->
+                        <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Тренировка в зале ММА" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши тренеры (горизонтальная галерея) -->
+    <section id="trainers" class="trainers-section">
+        <div class="container">
+            <h2 class="section-title text-center">НАШИ <span>ТРЕНЕРЫ</span></h2>
+            <p class="section-subtitle text-center">Профессионалы с боевым опытом и педагогическим подходом</p>
+            
+            <div class="trainers-gallery">
+                <button class="gallery-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="trainers-container">
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <img src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Тренер Алексей Петров">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Алексей Петров</h3>
+                            <p class="trainer-spec">ММА, грэпплинг</p>
+                            <p>Чемпион Европы по ММА, опыт тренерской работы 8 лет</p>
+                            <div class="trainer-achievements">
+                                <span><i class="fas fa-trophy"></i> 15-3 профессиональный рекорд</span>
+                                <span><i class="fas fa-medal"></i> 8 лет тренерской работы</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <!-- Исправленная фотка -->
+                            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JUQxJTgxJUQwJUJGJUQwJUJFJUQxJTgwJUQxJTgyJUQxJTgxJUQwJUJDJUQwJUI1JUQwJUJEfGVufDB8fDB8fHww" alt="Тренер Дмитрий Соколов">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Дмитрий Соколов</h3>
+                            <p class="trainer-spec">Бокс, кикбоксинг</p>
+                            <p>Мастер спорта по боксу, подготовил 5 чемпионов региона</p>
+                            <div class="trainer-achievements">
+                                <span><i class="fas fa-trophy"></i> Мастер спорта</span>
+                                <span><i class="fas fa-medal"></i> 12 лет тренерской работы</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Тренер Иван Ковалёв">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Иван Ковалёв</h3>
+                            <p class="trainer-spec">Бразильское джиу-джицу</p>
+                            <p>Коричневый пояс по BJJ, победитель международных турниров</p>
+                            <div class="trainer-achievements">
+                                <span><i class="fas fa-trophy"></i> Коричневый пояс BJJ</span>
+                                <span><i class="fas fa-medal"></i> 6 лет тренерской работы</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Тренер Мария Волкова">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Мария Волкова</h3>
+                            <p class="trainer-spec">Женские группы, самооборона</p>
+                            <p>Чемпионка по тайскому боксу, специалист по женской самообороне</p>
+                            <div class="trainer-achievements">
+                                <span><i class="fas fa-trophy"></i> Чемпионка по тайскому боксу</span>
+                                <span><i class="fas fa-medal"></i> 5 лет тренерской работы</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="gallery-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="gallery-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title text-center">ОТЗЫВЫ <span>НАШИХ УЧЕНИКОВ</span></h2>
+            <p class="section-subtitle text-center">Что говорят те, кто уже тренируется в нашем клубе</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Андрей">
+                            <div class="review-author">
+                                <h4>Андрей</h4>
+                                <p>Тренируется 2 года</p>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>«Пришел в клуб без опыта, за 2 года подготовки выиграл свой первый любительский турнир. Отличные тренеры, которые находят подход к каждому!»</p>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://plus.unsplash.com/premium_photo-1690587673708-d6ba8a1579a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fCVEMCVCNCVEMCVCNSVEMCVCMiVEMSU4MyVEMSU4OCVEMCVCQSVEMCVCMCUyMCVEMCVCMiUyMCVEMCVCRiVEMSU4MCVEMCVCRSVEMSU4NCVEMCVCOCVEMCVCQiVEMSU4Q3xlbnwwfHwwfHx8MA%3D%3D" alt="Екатерина">
+                            <div class="review-author">
+                                <h4>Екатерина</h4>
+                                <p>Тренируется 1 год</p>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>«Занимаюсь в женской группе у Марии. Не только научилась основам самообороны, но и улучшила физическую форму. Атмосфера в клубе дружеская и мотивирующая.»</p>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Максим">
+                            <div class="review-author">
+                                <h4>Максим</h4>
+                                <p>Тренируется 3 года</p>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>«Тренируюсь у Алексея, готовлюсь к своему первому профессиональному бою. Клуб дает все необходимое: от техники до физической и ментальной подготовки.»</p>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">КОНТАКТЫ <span>И РАСПИСАНИЕ</span></h2>
+                    <p class="contact-text">Расписание тренировок индивидуально для каждой группы и тренера. Позвоните нам или оставьте заявку, чтобы узнать подробности и записаться на пробную тренировку.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt contact-icon me-3"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Москва, ул. Спортивная, д. 15</p>
+                            </div>
+                        </div>
+                        <div class="contact-item d-flex align-items-start">
+                            <i class="fas fa-phone contact-icon me-3"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (495) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item d-flex align-items-start">
+                            <i class="fas fa-clock contact-icon me-3"></i>
+                            <div>
+                                <h4>Время работы</h4>
+                                <p>Пн-Пт: 7:00 - 23:00<br>Сб-Вс: 9:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3>ОСТАВИТЬ ЗАЯВКУ</h3>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control dark-select" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control dark-select" placeholder="Ваш телефон" required>
+                            </div>
+                            <div class="mb-3">
+                                <!-- Выпадающий список с темным фоном -->
+                                <select class="form-control dark-select">
+                                    <option>Выберите направление</option>
+                                    <option>ММА</option>
+                                    <option>Бокс</option>
+                                    <option>Бразильское джиу-джицу</option>
+                                    <option>Женская самооборона</option>
+                                    <option>Детская группа</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-accent w-100">ОТПРАВИТЬ ЗАЯВКУ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h1 class="logo-text">СТАЛЬНОЙ <span>ЛИС</span></h1>
+                    <p class="footer-text">Профессиональный клуб смешанных единоборств. Развиваем тело и дух с 2010 года.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О клубе</a></li>
+                        <li><a href="#trainers">Тренеры</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Мы в социальных сетях</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="footer-text mt-3">© 2023 Клуб единоборств «Стальной Лис». Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Собственный JS -->
+    <script src="script.js"></script>
+</body>
+</html>

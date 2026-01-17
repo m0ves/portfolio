@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пекарня «Крендель» — Ароматная выпечка с душой</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body x-data="cartComponent()" x-init="initCart()">
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-pretzel me-2"></i>
+                <span class="brand-text">Крендель</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Меню</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+                    <li class="nav-item position-relative">
+                        <button class="btn btn-order position-relative ms-3" 
+                                @click="cartOpen = !cartOpen"
+                                data-bs-toggle="modal" 
+                                data-bs-target="#orderModal"
+                                aria-label="Корзина">
+                            <i class="fas fa-shopping-basket me-2"></i>Заказать
+                            <!-- Счетчик товаров в корзине -->
+                            <span x-show="cartCount > 0" 
+                                  x-text="cartCount"
+                                  class="cart-counter position-absolute top-0 start-100 translate-middle badge rounded-pill bg-accent">
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Аромат свежей выпечки каждое утро</h1>
+                    <p class="hero-subtitle">Традиционные рецепты, современный подход. Выпекаем с 2015 года.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-utensils me-2"></i>Смотреть меню
+                        </a>
+                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#orderModal">
+                            <i class="fas fa-bolt me-2"></i>Быстрый заказ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Интерьер пекарни" class="img-fluid rounded-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content">
+                        <h2 class="section-title mb-4">Наша история</h2>
+                        <div class="story-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2015</div>
+                                <div class="timeline-content">
+                                    <h4>Открытие первой пекарни</h4>
+                                    <p>Небольшое помещение на 50 м² с одной печью и мечтой о лучшем хлебе</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2018</div>
+                                <div class="timeline-content">
+                                    <h4>Расширение производства</h4>
+                                    <p>Открытие второго филиала и запуск доставки по всему городу</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2023</div>
+                                <div class="timeline-content">
+                                    <h4>Современная пекарня</h4>
+                                    <p>3 филиала, команда из 15 пекарей и тысячи довольных клиентов</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats mt-5">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <div class="stat-number">8<span>лет</span></div>
+                                    <p class="stat-text">на рынке</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="stat-number">3<span>филиала</span></div>
+                                    <p class="stat-text">в городе</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="stat-number">15<span>пекарей</span></div>
+                                    <p class="stat-text">в команде</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Меню -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Наше меню</h2>
+                <p class="section-subtitle">Попробуйте наши хиты продаж</p>
+            </div>
+            
+            <!-- Категории -->
+            <div class="menu-categories mb-5">
+                <div class="d-flex justify-content-center flex-wrap">
+                    <button class="category-btn active" data-category="all">Все</button>
+                    <button class="category-btn" data-category="bread">Хлеб</button>
+                    <button class="category-btn" data-category="pastry">Выпечка</button>
+                    <button class="category-btn" data-category="dessert">Десерты</button>
+                </div>
+            </div>
+            
+            <!-- Галерея товаров -->
+            <div class="menu-gallery-wrapper">
+                <div class="menu-gallery">
+                    <!-- Хлеб -->
+                    <div class="product-card" data-category="bread">
+                        <div class="product-badge">Хит</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Деревенский хлеб">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Деревенский хлеб</h3>
+                            <p class="product-description">Ржаная закваска, мука грубого помола, длительная ферментация</p>
+                            <div class="product-footer">
+                                <div class="price">250 ₽</div>
+                                <button class="btn btn-add" 
+                                        @click="addToCart({
+                                            id: 'bread-1', 
+                                            name: 'Деревенский хлеб', 
+                                            price: 250
+                                        })"
+                                        :class="{ 'added': cart.find(item => item.id === 'bread-1') }"
+                                        data-product-id="bread-1">
+                                    <i class="fas fa-plus" x-show="!cart.find(item => item.id === 'bread-1')"></i>
+                                    <i class="fas fa-check" x-show="cart.find(item => item.id === 'bread-1')"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Выпечка -->
+                    <div class="product-card" data-category="pastry">
+                        <div class="product-badge">Новинка</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1602505938589-3a2c8bc49181?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUQwJUJBJUQxJTgwJUQxJTgzJUQwJUIwJUQxJTgxJUQxJTgxJUQwJUIwJUQwJUJEfGVufDB8fDB8fHww" 
+                                 alt="Круассан с миндалём">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Круассан с миндалём</h3>
+                            <p class="product-description">Слоёное тесто, миндальная паста, сахарная пудра</p>
+                            <div class="product-footer">
+                                <div class="price">180 ₽</div>
+                                <button class="btn btn-add" 
+                                        @click="addToCart({
+                                            id: 'pastry-1', 
+                                            name: 'Круассан с миндалём', 
+                                            price: 180
+                                        })"
+                                        :class="{ 'added': cart.find(item => item.id === 'pastry-1') }"
+                                        data-product-id="pastry-1">
+                                    <i class="fas fa-plus" x-show="!cart.find(item => item.id === 'pastry-1')"></i>
+                                    <i class="fas fa-check" x-show="cart.find(item => item.id === 'pastry-1')"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Десерты -->
+                    <div class="product-card" data-category="dessert">
+                        <div class="product-image">
+                            <img src="https://plus.unsplash.com/premium_photo-1673337265958-720aaa08d4ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8JUQxJThGJUQwJUIzJUQwJUJFJUQwJUI0JUQwJUJEJUQxJThCJUQwJUI5JTIwJUQxJTgyJUQwJUIwJUQxJTgwJUQxJTgyfGVufDB8fDB8fHww" 
+                                 alt="Ягодный торт">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Ягодный тарт</h3>
+                            <p class="product-description">Песочное тесто, ванильный крем, свежие ягоды</p>
+                            <div class="product-footer">
+                                <div class="price">320 ₽</div>
+                                <button class="btn btn-add" 
+                                        @click="addToCart({
+                                            id: 'dessert-1', 
+                                            name: 'Ягодный тарт', 
+                                            price: 320
+                                        })"
+                                        :class="{ 'added': cart.find(item => item.id === 'dessert-1') }"
+                                        data-product-id="dessert-1">
+                                    <i class="fas fa-plus" x-show="!cart.find(item => item.id === 'dessert-1')"></i>
+                                    <i class="fas fa-check" x-show="cart.find(item => item.id === 'dessert-1')"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Хлеб -->
+                    <div class="product-card" data-category="bread">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Багет с чесноком">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Багет с чесноком</h3>
+                            <p class="product-description">Хрустящий багет с чесночным маслом и травами</p>
+                            <div class="product-footer">
+                                <div class="price">190 ₽</div>
+                                <button class="btn btn-add" 
+                                        @click="addToCart({
+                                            id: 'bread-2', 
+                                            name: 'Багет с чесноком', 
+                                            price: 190
+                                        })"
+                                        :class="{ 'added': cart.find(item => item.id === 'bread-2') }"
+                                        data-product-id="bread-2">
+                                    <i class="fas fa-plus" x-show="!cart.find(item => item.id === 'bread-2')"></i>
+                                    <i class="fas fa-check" x-show="cart.find(item => item.id === 'bread-2')"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#fullMenuModal">
+                    <i class="fas fa-book-open me-2"></i>Посмотреть полное меню
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Отзывы наших гостей</h2>
+                <p class="section-subtitle">Что говорят те, кто уже попробовал нашу выпечку</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.unsplash.com/photo-1611484907204-814e845f2907?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3xvRkxYYzdaT2N4d3x8ZW58MHx8fHx8" 
+                                 alt="Анна" class="review-avatar">
+                            <div>
+                                <h4>Анна</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>«Каждую субботу беру здесь свежий хлеб и круассаны. Аромат напоминает детство у бабушки в деревне. Качество никогда не подводит!»</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Дмитрий" class="review-avatar">
+                            <div>
+                                <h4>Дмитрий</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>«Работаю рядом с центральным филиалом. Кофе и круассан на завтрак — идеальное начало дня. Особенно рекомендую крендели с солью!»</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Ольга" class="review-avatar">
+                            <div>
+                                <h4>Ольга</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>«Заказывали десерты на детский праздник. Тарты и эклеры были не только красивые, но и очень вкусные. Дети были в восторге!»</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-info">
+                        <h2 class="section-title mb-4">Контакты</h2>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Москва, ул. Пушкина, 10</p>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (495) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h4>Часы работы</h4>
+                                <p>Ежедневно: 7:00 - 23:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-truck contact-icon"></i>
+                            <div>
+                                <h4>Доставка</h4>
+                                <p>Бесплатно при заказе от 1000 ₽</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Остались вопросы?</h3>
+                        <form id="contactForm" @submit.prevent="submitContactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Ваше имя" x-model="contactForm.name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" placeholder="Телефон" x-model="contactForm.phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" placeholder="Ваш вопрос" rows="3" x-model="contactForm.message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100" :disabled="contactForm.isSubmitting">
+                                <template x-if="!contactForm.isSubmitting">
+                                    <span><i class=" fas fa-paper-plane me-2"></i>Отправить сообщение</span>
+                                </template>
+                                <template x-if="contactForm.isSubmitting">
+                                    <span><i class="fas fa-spinner fa-spin me-2"></i>Отправка...</span>
+                                </template>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <i class="fas fa-pretzel footer-logo"></i>
+                        <h3 class="footer-title">Пекарня «Крендель»</h3>
+                        <p class="footer-text">Ароматная выпечка с душой с 2015 года</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-heading">Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#menu">Меню</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-heading">Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#orderModal">
+                            <i class="fas fa-bolt me-2"></i>Сделать заказ
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p>&copy; 2023 Пекарня «Крендель». Все права защищены.</p>
+                <p>Сайт создан в качестве тестового проекта для портфолио</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно заказа с Alpine.js -->
+    <div class="modal fade" id="orderModal" tabindex="-1" x-data="cartComponent()" x-init="initCart()">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-basket me-2"></i>
+                        Корзина <span x-show="cartCount > 0">(<span x-text="cartCount"></span>)</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                
+                <div class="modal-body">
+                    <!-- Состояние: корзина пуста -->
+                    <div x-show="cartCount === 0" class="text-center py-5">
+                        <i class="fas fa-shopping-basket fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Ваша корзина пуста</p>
+                        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Продолжить покупки
+                        </button>
+                    </div>
+                    
+                    <!-- Состояние: в корзине есть товары -->
+                    <template x-if="cartCount > 0">
+                        <div>
+                            <div class="order-items mb-4">
+                                <template x-for="item in cart" :key="item.id">
+                                    <div class="order-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                        <div class="item-info">
+                                            <div class="fw-semibold" x-text="item.name"></div>
+                                            <div class="text-muted small" x-text="`${item.price} ₽ × ${item.quantity}`"></div>
+                                        </div>
+                                        <div class="item-controls d-flex align-items-center">
+                                            <div class="me-3 fw-bold" x-text="`${item.total} ₽`"></div>
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-outline-secondary" 
+                                                        @click="updateQuantity(item.id, -1)"
+                                                        :disabled="item.quantity <= 1">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <span class="btn btn-outline-secondary disabled px-3" x-text="item.quantity"></span>
+                                                <button class="btn btn-outline-secondary" @click="updateQuantity(item.id, 1)">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            <button class="btn btn-link text-danger ms-2" 
+                                                    @click="removeFromCart(item.id)"
+                                                    aria-label="Удалить">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                            
+                            <div class="order-total mb-4">
+                                <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded">
+                                    <span class="fs-5 fw-bold">Итого:</span>
+                                    <span class="fs-4 fw-bold text-accent" x-text="`${cartTotal} ₽`"></span>
+                                </div>
+                            </div>
+                            
+                            <form @submit.prevent="submitOrder">
+                                <div class="mb-3">
+                                    <label class="form-label">Ваше имя</label>
+                                    <input type="text" class="form-control" x-model="orderData.name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Телефон</label>
+                                    <input type="tel" class="form-control" x-model="orderData.phone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Адрес доставки</label>
+                                    <input type="text" class="form-control" placeholder="Если требуется доставка" x-model="orderData.address">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Комментарий к заказу</label>
+                                    <textarea class="form-control" rows="2" x-model="orderData.comment"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100" :disabled="isSubmitting">
+                                    <template x-if="!isSubmitting">
+                                        <span><i class="fas fa-check me-2"></i>Оформить заказ</span>
+                                    </template>
+                                    <template x-if="isSubmitting">
+                                        <span><i class="fas fa-spinner fa-spin me-2"></i>Отправка...</span>
+                                    </template>
+                                </button>
+                            </form>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно полного меню -->
+    <div class="modal fade" id="fullMenuModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Полное меню</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Здесь будет полное меню в формате PDF или подробный список.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast контейнер для уведомлений -->
+    <div class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Основной JS -->
+    <script src="script.js"></script>
+</body>
+</html>

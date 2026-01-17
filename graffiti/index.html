@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТЕНОГРАФФИЯ | Фестиваль граффити в Челябинске</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas для граффити-анимации -->
+    <canvas id="graffitiCanvas"></canvas>
+    
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">СТЕНО<span>ГРАФФИЯ</span></a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">О фестивале</a></li>
+                <li><a href="#artists">Художники</a></li>
+                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#tickets" class="nav-btn">Билеты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero-секция -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-tagline">Первый городской фестиваль</div>
+            <h1 class="hero-title">
+                <span class="title-line line-1">УЛИЧНОГО</span>
+                <span class="title-line line-2">ИСКУССТВА</span>
+                <span class="title-line line-3">В ЧЕЛЯБИНСКЕ</span>
+            </h1>
+            <p class="hero-subtitle">12-14 июля 2024 • Исторический центр города</p>
+            <div class="hero-buttons">
+                <a href="#tickets" class="btn-primary">
+                    <i class="fas fa-ticket-alt"></i> Купить билет
+                </a>
+                <a href="#about" class="btn-secondary">
+                    <i class="fas fa-info-circle"></i> Подробнее
+                </a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Листайте вниз</span>
+        </div>
+    </header>
+
+    <!-- Секция "О фестивале" -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">ПРЕОБРАЖАЕМ ГОРОД <span class="accent">ВМЕСТЕ</span></h2>
+            <p class="section-subtitle">Три дня творчества, музыки и уличной культуры</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>15+ ХУДОЖНИКОВ</h3>
+                    <p>Лучшие райтеры из России и Европы создадут масштабные работы на фасадах в центре города.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>ЖИВЫЕ ВЫСТУПЛЕНИЯ</h3>
+                    <p>Концерты, диджей-сеты и выступления местных групп на открытой сцене.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>МАСТЕР-КЛАССЫ</h3>
+                    <p>Научись основам граффити и стрит-арта на воркшопах от участников фестиваля.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция художников -->
+    <section id="artists" class="section dark">
+        <div class="container">
+            <h2 class="section-title">НАШИ <span class="accent">ХУДОЖНИКИ</span></h2>
+            <p class="section-subtitle">Лучшие мастера уличного искусства</p>
+            
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <div class="artist-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1692650759130-3b3c32d645b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8JUQwJUIzJUQxJTgwJUQwJUIwJUQxJTg0JUQxJTg0JUQwJUI4JUQxJTgyJUQwJUI4JUQxJTgxJUQxJTgyfGVufDB8fDB8fHww" 
+                             alt="Художник KRASER" loading="lazy">
+                    </div>
+                    <h3>KRASER</h3>
+                    <p>Москва • 3D-стиль</p>
+                    <div class="artist-tags">
+                        <span class="tag">Абстракция</span>
+                        <span class="tag">Геометрия</span>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <div class="artist-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                             alt="Художник ZUKA" loading="lazy">
+                    </div>
+                    <h3>ZUKA</h3>
+                    <p>Санкт-Петербург • Каллиграффити</p>
+                    <div class="artist-tags">
+                        <span class="tag">Типографика</span>
+                        <span class="tag">Каллиграфия</span>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <div class="artist-image">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop&crop=face" 
+                             alt="Художник TAPIR" loading="lazy">
+                    </div>
+                    <h3>TAPIR</h3>
+                    <p>Екатеринбург • Персонажи</p>
+                    <div class="artist-tags">
+                        <span class="tag">Персонажи</span>
+                        <span class="tag">Сюрреализм</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея работ -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">ГАЛЕРЕЯ <span class="accent">РАБОТ</span></h2>
+            <p class="section-subtitle">Как граффити преображает пространство</p>
+            
+            <!-- Добавляем контейнер с классом masonry-grid -->
+            <div class="masonry-grid">
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1517776832751-0a7e6993de03?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdyYWZmaXRpfGVufDB8fDB8fHww" 
+                        alt="Граффити работа 1" loading="lazy">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://plus.unsplash.com/premium_photo-1693000474956-1a5d8a85befc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JhZmZpdGl8ZW58MHx8MHx8fDA%3D" 
+                        alt="Граффити работа 2" loading="lazy">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1576096876569-0cffb1b1268d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdyYWZmaXRpfGVufDB8fDB8fHww" 
+                        alt="Граффити работа 3" loading="lazy">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1506021180614-27b3f7489640?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdyYWZmaXRpfGVufDB8fDB8fHww" 
+                        alt="Граффити работа 4" loading="lazy">
+                </div>
+                <!-- Добавляем еще 2 изображения для более интересной компоновки -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1604716053460-3f66248bf8de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhZmZpdGl8ZW58MHx8MHx8fDA%3D" 
+                        alt="Граффити работа 5" loading="lazy">
+                </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1494026222377-872a605b54ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGdyYWZmaXRpfGVufDB8fDB8fHww" 
+                        alt="Граффити работа 6" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Билеты и форма -->
+    <section id="tickets" class="section dark">
+        <div class="container">
+            <h2 class="section-title">ПРИОБРЕСТИ <span class="accent">БИЛЕТЫ</span></h2>
+            <p class="section-subtitle">Выбери подходящий вариант участия</p>
+            
+            <div class="tickets-grid">
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <h3>ОДИН ДЕНЬ</h3>
+                        <div class="price">600<span>₽</span></div>
+                    </div>
+                    <ul class="ticket-features">
+                        <li><i class="fas fa-check"></i> Вход в выбранный день</li>
+                        <li><i class="fas fa-check"></i> Доступ ко всем зонам</li>
+                        <li><i class="fas fa-check"></i> Участие в воркшопах</li>
+                        <li><i class="fas fa-times"></i> Мерч не включён</li>
+                    </ul>
+                    <button class="btn-outline select-ticket" data-ticket="oneday">Выбрать</button>
+                </div>
+                
+                <div class="ticket-card featured">
+                    <div class="featured-badge">ПОПУЛЯРНЫЙ</div>
+                    <div class="ticket-header">
+                        <h3>ВСЁ ВКЛЮЧЕНО</h3>
+                        <div class="price">1500<span>₽</span></div>
+                    </div>
+                    <ul class="ticket-features">
+                        <li><i class="fas fa-check"></i> Вход на все 3 дня</li>
+                        <li><i class="fas fa-check"></i> Фирменная футболка</li>
+                        <li><i class="fas fa-check"></i> Набор наклеек</li>
+                        <li><i class="fas fa-check"></i> Early access</li>
+                    </ul>
+                    <button class="btn-primary select-ticket" data-ticket="allinclusive">Выбрать</button>
+                </div>
+                
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <h3>ГРУППОВОЙ</h3>
+                        <div class="price">400<span>₽/чел</span></div>
+                    </div>
+                    <ul class="ticket-features">
+                        <li><i class="fas fa-check"></i> Для групп от 5 чел</li>
+                        <li><i class="fas fa-check"></i> Вход на один день</li>
+                        <li><i class="fas fa-check"></i> Фото с художником</li>
+                        <li><i class="fas fa-times"></i> Мерч не включён</li>
+                    </ul>
+                    <button class="btn-outline select-ticket" data-ticket="group">Выбрать</button>
+                </div>
+            </div>
+            
+            <!-- Форма заказа -->
+            <div class="order-form" id="orderForm">
+                <h3><i class="fas fa-shopping-cart"></i> ОФОРМЛЕНИЕ ЗАКАЗА</h3>
+                <form id="ticketForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="ticketType" required>
+                                <option value="">Выберите билет</option>
+                                <option value="oneday">Один день (600₽)</option>
+                                <option value="allinclusive">Всё включено (1500₽)</option>
+                                <option value="group">Групповой (400₽/чел)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Дополнительные пожелания..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i> ОТПРАВИТЬ ЗАЯВКУ
+                    </button>
+                    <p class="form-note">
+                        <i class="fas fa-info-circle"></i> После отправки мы свяжемся с вами для подтверждения заказа.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">СТЕНО<span>ГРАФФИЯ</span></a>
+                    <p>Фестиваль уличного искусства в Челябинске</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>КОНТАКТЫ</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Челябинск, ул. Кирова, 159</p>
+                    <p><i class="fas fa-envelope"></i> info@stenografia.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (351) 123-45-67</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>НАВИГАЦИЯ</h4>
+                    <ul>
+                        <li><a href="#about">О фестивале</a></li>
+                        <li><a href="#artists">Художники</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#tickets">Билеты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 СТЕНОГРАФФИЯ. Все права защищены.</p>
+                <p>Проект реализуется при поддержке администрации г. Челябинска</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
